@@ -8,7 +8,7 @@ This package emulates proposed functionality with inline throwable expression.
 
 const length = (value: string) => {
     if (value === undefined || value === null) {
-        throw Error('falsy value entered!')
+        throw new Error('falsy value entered!');
     }
     return value.length;
 }
