@@ -1,0 +1,15 @@
+{
+  "name": "throw-expression",
+  "version": "1.0.0",
+  "description": "Allows you, through a simple function, to throw an error inside an expression",
+  "main": "index.js",
+  "repository": "https://github.com/jindra12/throw-expression.git",
+  "author": "Jan Jindráček",
+  "license": "MIT",
+  "man": ["./README.md"],
+  "keywords": ["throw", "expression", "throw expression", "no dependency", "typescript", "utility", "error", "proposal"],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
