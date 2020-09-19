@@ -24,6 +24,7 @@ describe("Can use throwable expressions to throw when necessary", () => {
     test("Can check for falsy with throwable", () => {
         expect(() => throwIfFalsy(null, 'is falsy')).toThrow('is falsy');
         expect(() => throwIfFalsy(undefined, 'is falsy')).toThrow('is falsy');
+        expect(throwIfFalsy("", 'is falsy')).toBe("");
         expect(throwIfFalsy(false, 'is falsy')).toBe(false); // in this case, 'Falsy' is a shorthand for null/undefined, not values like 0 or false
     });
     test("Can be used in an expression with string/null type", () => {
