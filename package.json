@@ -1,9 +1,9 @@
 {
-  "name": "throw-expression-dev",
+  "name": "pipes-dev",
   "version": "1.0.0",
-  "description": "Throw-expression dev package",
+  "description": "pipe-async dev package",
   "main": "./dist/index.js",
-  "repository": "https://github.com/jindra12/throw-expression.git",
+  "repository": "https://github.com/jindra12/pipes-dev.git",
   "author": "Jan Jindráček",
   "license": "MIT",
   "scripts": {
