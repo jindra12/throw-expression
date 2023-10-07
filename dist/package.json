@@ -1,6 +1,6 @@
 {
   "name": "throw-expression",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "description": "Allows you, through a simple function, to throw an error inside an expression",
   "main": "index.js",
   "repository": "https://github.com/jindra12/throw-expression.git",

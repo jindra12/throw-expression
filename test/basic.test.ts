@@ -1,4 +1,4 @@
-import { Throw, throwIfFalsy, throwIfNull, throwIfUndefined } from '../src/index';
+import { Throw, throwIfFalsy, throwIfNull, throwIfUndefined, throwIfNullish, throwIfNotANumber } from '../src/index';
 
 describe("Can use throwable expressions to throw when necessary", () => {
     test("Can simply throw", () => {
@@ -24,8 +24,23 @@ describe("Can use throwable expressions to throw when necessary", () => {
     test("Can check for falsy with throwable", () => {
         expect(() => throwIfFalsy(null, 'is falsy')).toThrow('is falsy');
         expect(() => throwIfFalsy(undefined, 'is falsy')).toThrow('is falsy');
-        expect(throwIfFalsy("", 'is falsy')).toBe("");
-        expect(throwIfFalsy(false, 'is falsy')).toBe(false); // in this case, 'Falsy' is a shorthand for null/undefined, not values like 0 or false
+        expect(() => throwIfFalsy("", 'is falsy')).toThrow('is falsy');
+        expect(() => throwIfFalsy(0, 'is falsy')).toThrow('is falsy');
+        expect(() => throwIfFalsy(NaN, 'is falsy')).toThrow('is falsy');
+        expect(() => throwIfFalsy(false, 'is falsy')).toThrow('is falsy');
+        expect(throwIfFalsy("is truthy", 'is falsy').length).toBe(9);
+    });
+    test("Can check for nullish with throwable", () => {
+        expect(() => throwIfNullish(null, 'is nullish')).toThrow('is nullish');
+        expect(() => throwIfNullish(undefined, 'is nullish')).toThrow('is nullish');
+        expect(throwIfNullish("", 'is nullish')).toBe("");
+        expect(throwIfNullish(false, 'is nullish')).toBe(false);
+    });
+    test("Can check for NaN with throwable", () => {
+        expect(() => throwIfNotANumber(NaN, 'is NaN')).toThrow('is NaN');
+        expect(() => throwIfNotANumber({}, 'is NaN')).toThrow('is NaN');
+        expect(throwIfNotANumber(0, 'is NaN')).toBe(0);
+        expect(throwIfNotANumber(2, 'is NaN')).toBe(2);
     });
     test("Can be used in an expression with string/null type", () => {
         let value: string | null = null;
