@@ -1,2 +1,2 @@
-# pipes-dev
-Package for pipeline functionality in JS/TS - https://github.com/tc39/proposal-pipeline-operator
+# throw-expression
+Package for throw expression in JS/TS - https://github.com/tc39/proposal-throw-expressions

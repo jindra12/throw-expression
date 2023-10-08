@@ -1,13 +1,13 @@
 {
-  "name": "pipe-async",
+  "name": "throw-expression",
   "version": "2.0.1",
-  "description": "Allows for both sync and async pipelines with TS support",
+  "description": "Allows you, through a simple function, to throw an error inside an expression",
   "main": "index.js",
   "repository": "https://github.com/jindra12/throw-expression.git",
   "author": "Jan Jindráček",
   "license": "MIT",
   "man": ["./README.md"],
-  "keywords": ["pipe", "piping", "pipeline operator", "pipeline", "no dependency", "typescript", "utility", "async", "await", "proposal"],
+  "keywords": ["throw", "expression", "throw expression", "no dependency", "typescript", "utility", "error", "proposal"],
   "dependencies": {
   },
   "devDependencies": {
