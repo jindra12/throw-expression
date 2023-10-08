@@ -1,9 +1,9 @@
 {
   "name": "pipeline-async",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Allows for both sync and async pipelines with TS support",
   "main": "index.js",
-  "repository": "https://github.com/jindra12/pipes-dev.git",
+  "repository": "https://github.com/jindra12/throw-expression.git",
   "author": "Jan Jindráček",
   "license": "MIT",
   "man": ["./README.md"],
