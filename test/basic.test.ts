@@ -3,7 +3,7 @@ import { Throw, throwIfFalsy, throwIfNull, throwIfUndefined, throwIfNullish, thr
 describe("Can use throwable expressions to throw when necessary", () => {
     test("Can simply throw", () => {
         expect(() => Throw('Write your exception message here')).toThrow('Write your exception message here');
-        expect(() => Throw(Error('Write your exception message here'))).toThrow('Write your exception message here');        
+        expect(() => Throw(Error('Write your exception message here'))).toThrow('Write your exception message here');
     });
     test("Can throw conditionally", () => {
         let value: string | null = null;
@@ -53,5 +53,12 @@ describe("Can use throwable expressions to throw when necessary", () => {
         expect(() => throwIfFalsy(value, 'is falsy').length).toThrow('is falsy');
         value = 'any';
         expect(throwIfFalsy(value, 'is falsy').length).toBe(3);
+    });
+    test("Exception does not contain Throw() function call within its stack trace", () => {
+        try {
+            Throw("message");
+        } catch (e) {
+            expect((e as Error).stack).not.toContain("Throw");
+        }
     });
 });

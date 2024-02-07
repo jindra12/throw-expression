@@ -3,10 +3,13 @@
  * @param error either error object or a string
  */
 export const Throw = (error: string | Error): never => {
-    if (typeof error === 'string') {
-        throw new Error(error);
-    }
-    throw error;
+    const errorObject = typeof error === "string" ? new Error(error) : error;
+
+    // Big thanks to https://github.com/Yona-Appletree for creating this issue! This was all their idea: https://github.com/jindra12/throw-expression/issues/2
+    // This prevents this function from appearing in the stack trace, making
+    // it look the same as if a normal throw statement had been used
+    Error.captureStackTrace(errorObject, Throw);
+    throw errorObject;
 };
 
 /**
